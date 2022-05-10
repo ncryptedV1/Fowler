@@ -24,7 +24,7 @@ class Customer {
     result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
     for (Rental each : rentals) {
-      double thisAmount = 0;
+      double thisAmount;
       //determine amounts for each line
       thisAmount = amountFor(each);
       // add frequent renter points
