@@ -9,7 +9,6 @@ public class Program {
    * This is the main entry point for the application
    */
   public static void main(String[] args) {
-    String result;
     System.out.println("Welcome to the Movie Store");
     Movie m1 = new Movie("movie1", Movie.PriceCode.NEW_RELEASE);
     Movie m2 = new Movie("movie2", Movie.PriceCode.CHILDREN);
@@ -19,7 +18,7 @@ public class Program {
     c1.addRental(r1);
     c1.addRental(r2);
     System.out.println("Let's get the Statement");
-    result = c1.generateStatement();
+    String result = c1.generateStatement();
     System.out.println(result);
   }
 }

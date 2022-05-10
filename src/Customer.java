@@ -24,9 +24,8 @@ class Customer {
     result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
     for (Rental each : rentals) {
-      double thisAmount;
       // determine amounts for each line
-      thisAmount = each.calculateAmount();
+      double thisAmount = each.calculateAmount();
       // add frequent renter points
       frequentRenterPoints++;
       // add bonus for a two-day new release rental
