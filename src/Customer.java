@@ -20,8 +20,8 @@ class Customer {
   public String generateStatement() {
     double totalAmount = 0;
     int frequentRenterPoints = 0;
-    String result = "Rental Record for " + this.getName() + "\n";
-    result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
+    String result = String.format("Rental Record for %s\n", getName());
+    result += "\tTitle\t\tDays\tAmount\n";
 
     for (Rental each : rentals) {
       // determine amounts for each line
@@ -29,17 +29,18 @@ class Customer {
       // add frequent renter points
       frequentRenterPoints++;
       // add bonus for a two-day new release rental
-      if ((each.getMovie().getPriceCode() == Movie.PriceCode.NEW_RELEASE) && each.getDaysRented() > 1) {
+      if ((each.getMovie().getPriceCode() == Movie.PriceCode.NEW_RELEASE) &&
+          each.getDaysRented() > 1) {
         frequentRenterPoints++;
       }
       // show figures for this rental
-      result += "\t" + each.getMovie().getTitle() + "\t" + "\t" + each.getDaysRented() + "\t" +
-          thisAmount + "\n";
+      result += String.format("\t%s\t\t%s\t%s\n", each.getMovie().getTitle(), each.getDaysRented(),
+          thisAmount);
       totalAmount += thisAmount;
     }
     // add footer lines
-    result += "Amount owed is " + totalAmount + "\n";
-    result += "You earned " + frequentRenterPoints + " frequent renter points";
+    result += String.format("Amount owed is %s\n", totalAmount);
+    result += String.format("You earned %s frequent renter points", frequentRenterPoints);
     return result;
   }
 
