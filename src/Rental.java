@@ -16,19 +16,15 @@ class Rental {
   }
 
   public double calculateAmount() {
-    double thisAmount = 0;
     switch (movie.getPriceCode()) {
       case REGULAR:
-        thisAmount += 2 + Math.max(daysRented - 2, 0) * 1.5;
-        break;
+        return 2 + Math.max(daysRented - 2, 0) * 1.5;
       case NEW_RELEASE:
-        thisAmount += daysRented * 3;
-        break;
+        return daysRented * 3;
       case CHILDREN:
-        thisAmount += 1.5 + Math.max(daysRented - 3, 0) * 1.5;
-        break;
+        return 1.5 + Math.max(daysRented - 3, 0) * 1.5;
     }
-    return thisAmount;
+    return 0;
   }
 
 }
