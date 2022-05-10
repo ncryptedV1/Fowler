@@ -17,7 +17,7 @@ class Customer {
     return name;
   }
 
-  public String statement() {
+  public String generateStatement() {
     double totalAmount = 0;
     int frequentRenterPoints = 0;
     String result = "Rental Record for " + this.getName() + "\n";
