@@ -25,8 +25,9 @@ class Rental {
         return daysRented * 3;
       case CHILDREN:
         return 1.5 + Math.max(daysRented - 3, 0) * 1.5;
+      default:
+        return 0;
     }
-    return 0;
   }
 
 }
