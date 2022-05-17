@@ -1,3 +1,5 @@
+package de.ncrypted.fowler;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +22,7 @@ class Customer {
   public String generateStatement() {
     double totalAmount = 0;
     int frequentRenterPoints = 0;
-    String result = String.format("Rental Record for %s\n", getName());
+    String result = String.format("de.ncrypted.fowler.Rental Record for %s\n", getName());
     result += "\tTitle\t\tDays\tAmount\n";
 
     for (Rental each : rentals) {

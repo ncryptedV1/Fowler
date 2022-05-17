@@ -1,3 +1,5 @@
+package de.ncrypted.fowler;
+
 public class Movie {
   private final String title;
   private PriceCode priceCode;
